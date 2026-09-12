@@ -1,0 +1,41 @@
+{
+  "version": "0.1.0",
+  "kinds": ["DOMAIN", "TOPIC", "TECHNIQUE", "PATTERN", "PREREQUISITE"],
+  "nodes": {
+    "domain.graph": {"kind":"DOMAIN","name":"Graph","spoiler_level":"H0"},
+    "domain.dp": {"kind":"DOMAIN","name":"Dynamic Programming","spoiler_level":"H1"},
+    "domain.data_structure": {"kind":"DOMAIN","name":"Data Structure","spoiler_level":"H0"},
+    "domain.string": {"kind":"DOMAIN","name":"String","spoiler_level":"H0"},
+    "domain.math": {"kind":"DOMAIN","name":"Mathematics","spoiler_level":"H0"},
+    "domain.greedy": {"kind":"DOMAIN","name":"Greedy","spoiler_level":"H2"},
+
+    "topic.graph.tree": {"kind":"TOPIC","name":"Tree","parent":"domain.graph","spoiler_level":"H0"},
+    "topic.graph.shortest_path": {"kind":"TOPIC","name":"Shortest Path","parent":"domain.graph","spoiler_level":"H2"},
+    "topic.graph.connectivity": {"kind":"TOPIC","name":"Connectivity","parent":"domain.graph","spoiler_level":"H1"},
+    "topic.dp.tree": {"kind":"TOPIC","name":"Tree DP","parent":"domain.dp","spoiler_level":"H2"},
+    "topic.dp.interval": {"kind":"TOPIC","name":"Interval DP","parent":"domain.dp","spoiler_level":"H2"},
+    "topic.dp.bitmask": {"kind":"TOPIC","name":"Bitmask DP","parent":"domain.dp","spoiler_level":"H2"},
+    "topic.ds.segment_tree": {"kind":"TOPIC","name":"Segment Tree","parent":"domain.data_structure","spoiler_level":"H2"},
+    "topic.ds.fenwick": {"kind":"TOPIC","name":"Fenwick Tree","parent":"domain.data_structure","spoiler_level":"H2"},
+    "topic.ds.dsu": {"kind":"TOPIC","name":"Disjoint Set Union","parent":"domain.data_structure","spoiler_level":"H2"},
+
+    "tech.rerooting": {"kind":"TECHNIQUE","name":"Rerooting","parent":"topic.dp.tree","spoiler_level":"H4"},
+    "tech.lazy_propagation": {"kind":"TECHNIQUE","name":"Lazy Propagation","parent":"topic.ds.segment_tree","spoiler_level":"H4"},
+    "tech.binary_search_answer": {"kind":"TECHNIQUE","name":"Binary Search on Answer","spoiler_level":"H4"},
+    "tech.offline_processing": {"kind":"TECHNIQUE","name":"Offline Processing","spoiler_level":"H4"},
+    "tech.small_to_large": {"kind":"TECHNIQUE","name":"Small-to-Large","spoiler_level":"H4"},
+
+    "pattern.monotonicity": {"kind":"PATTERN","name":"Monotonicity","spoiler_level":"H3"},
+    "pattern.invariant": {"kind":"PATTERN","name":"Invariant Maintenance","spoiler_level":"H3"},
+    "pattern.contribution": {"kind":"PATTERN","name":"Contribution Reframing","spoiler_level":"H3"},
+    "pattern.state_sufficiency": {"kind":"PATTERN","name":"State Sufficiency","spoiler_level":"H3"},
+    "pattern.exchange": {"kind":"PATTERN","name":"Exchange Argument","spoiler_level":"H3"},
+    "pattern.event_transform": {"kind":"PATTERN","name":"Query-to-Event Transformation","spoiler_level":"H3"},
+    "pattern.complement": {"kind":"PATTERN","name":"Complement View","spoiler_level":"H3"},
+
+    "prereq.complexity": {"kind":"PREREQUISITE","name":"Asymptotic Complexity","spoiler_level":"H0"},
+    "prereq.dfs": {"kind":"PREREQUISITE","name":"DFS","spoiler_level":"H0"},
+    "prereq.bfs": {"kind":"PREREQUISITE","name":"BFS","spoiler_level":"H0"},
+    "prereq.prefix_sum": {"kind":"PREREQUISITE","name":"Prefix Sum","spoiler_level":"H0"}
+  }
+}
