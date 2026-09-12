@@ -1,0 +1,28 @@
+{
+  "version": "0.1.0",
+  "bands": {
+    "D1": {"anchor":"Luogu 入门","description":"Basic syntax / direct simulation / elementary implementation."},
+    "D2": {"anchor":"Luogu 普及-","description":"Standard basic algorithms with light reasoning."},
+    "D3": {"anchor":"Luogu 普及","description":"Routine OI algorithms; one main idea, moderate implementation."},
+    "D4": {"anchor":"Luogu 普及+/提高-","description":"Requires nontrivial modeling, combination of standard techniques, or careful implementation."},
+    "D5": {"anchor":"Luogu 提高","description":"Strong modeling/insight or algorithmic optimization; substantial contest problem."},
+    "D6": {"anchor":"Luogu 提高+/省选-","description":"Advanced technique, multi-step insight, or demanding proof/implementation."},
+    "D7": {"anchor":"Luogu 省选/NOI-","description":"High-level national-selection style; deep modeling, optimization, or composition."},
+    "D8": {"anchor":"Luogu NOI/NOI+/CTS","description":"Top-tier OI difficulty; exceptional insight, technique depth, or implementation complexity."}
+  },
+  "dimensions": {
+    "knowledge": {"scale":"1-5","question":"How much prerequisite algorithmic knowledge is required?"},
+    "insight": {"scale":"1-5","question":"How hard is the key breakthrough to discover?"},
+    "modeling": {"scale":"1-5","question":"How hard is it to define the correct abstraction/state?"},
+    "proof": {"scale":"1-5","question":"How difficult is correctness reasoning?"},
+    "optimization": {"scale":"1-5","question":"How hard is moving from brute/partial to target complexity?"},
+    "implementation": {"scale":"1-5","question":"How complex/risky is implementation?"},
+    "debugging": {"scale":"1-5","question":"How difficult are corner cases and failure localization?"}
+  },
+  "rules": [
+    "Always preserve native platform difficulty/rating separately.",
+    "Never claim exact equivalence between platform rating systems.",
+    "Tutor band is a calibrated internal estimate, not a platform conversion.",
+    "For IOI-style tasks, record entry/partial/full difficulty when the score ladder materially differs."
+  ]
+}
