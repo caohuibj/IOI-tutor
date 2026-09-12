@@ -1,0 +1,34 @@
+{
+  "version": "0.1.0",
+  "platforms": {
+    "LUOGU": {
+      "source_id_format": "LUOGU-{external_id}",
+      "examples": ["LUOGU-P3372"],
+      "input_hints": ["P3372", "luogu P3372", "luogu.com.cn/problem/P3372"]
+    },
+    "CODEFORCES": {
+      "source_id_format": "CF-{contest_id}-{index}",
+      "examples": ["CF-1705-C"],
+      "input_hints": ["CF 1705C", "codeforces.com/contest/1705/problem/C"]
+    },
+    "ATCODER": {
+      "source_id_format": "AT-{contest}-{task}",
+      "examples": ["AT-ABC419-F"],
+      "input_hints": ["ABC419 F", "atcoder.jp/contests/abc419/tasks/abc419_f"]
+    },
+    "IOI": {
+      "source_id_format": "IOI-{year}-{task_slug}",
+      "examples": ["IOI-2024-NILE"]
+    },
+    "USACO": {
+      "source_id_format": "USACO-{year}-{season}-{division}-{task}",
+      "examples": ["USACO-2025-JAN-GOLD-1"]
+    }
+  },
+  "identity_rules": [
+    "Platform Source ID is not the canonical Tutor Problem ID.",
+    "One canonical Txxxxxx problem may have multiple Sources.",
+    "Deduplicate only on explicit stable source identity or strong statement identity; never merge by fuzzy title alone.",
+    "Preserve native platform difficulty/rating as source metadata."
+  ]
+}
