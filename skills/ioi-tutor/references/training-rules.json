@@ -1,0 +1,57 @@
+{
+  "version": "0.1.0",
+  "rules": [
+    {
+      "id": "repeat-root-cause",
+      "when": "same root error occurs >= 2 times in recent evidence",
+      "actions": ["REPAIR", "NEAR_TRANSFER"],
+      "note": "Train the causal skill, not merely the same topic."
+    },
+    {
+      "id": "recognition-high-modeling-low",
+      "when": "recognition evidence strong and modeling evidence weak",
+      "actions": ["NEAR_TRANSFER", "FAR_TRANSFER"],
+      "note": "Prefer disguised problems; avoid obvious template drills."
+    },
+    {
+      "id": "implementation-weak",
+      "when": "algorithm is correct but implementation errors repeat",
+      "actions": ["REPAIR", "CONTRAST"],
+      "note": "Use implementation-heavy but conceptually standard tasks and targeted boundary drills."
+    },
+    {
+      "id": "tle-correct-model",
+      "when": "correct model but TLE/partial score",
+      "actions": ["REPAIR", "STRETCH"],
+      "note": "Train complexity analysis and optimization transitions."
+    },
+    {
+      "id": "partial-score-weak",
+      "when": "contest attempts repeatedly skip achievable subtasks",
+      "actions": ["CONTEST", "REPAIR"],
+      "note": "Train score-ladder decomposition explicitly."
+    },
+    {
+      "id": "retention",
+      "when": "problem solved after meaningful hint/error correction",
+      "actions": ["RETENTION"],
+      "default_due_days": 7,
+      "note": "Redo must re-lock old code, hints, and key insight."
+    },
+    {
+      "id": "mastery-needs-transfer",
+      "when": "mastery estimate high but evidence lacks transfer/retention",
+      "actions": ["FAR_TRANSFER", "RETENTION"],
+      "note": "Do not treat one template AC as mastery."
+    }
+  ],
+  "ranking_factors": [
+    "skill_gap",
+    "training_relevance",
+    "difficulty_fit",
+    "spacing",
+    "transfer_value",
+    "problem_quality",
+    "recent_repetition_penalty"
+  ]
+}
