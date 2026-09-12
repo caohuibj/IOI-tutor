@@ -1,0 +1,12 @@
+{
+  "version": "0.1.0",
+  "modes": {
+    "REPAIR": {"purpose":"Fix a newly diagnosed weakness with a simpler, targeted exercise."},
+    "NEAR_TRANSFER": {"purpose":"Apply the same skill/pattern in a closely related problem."},
+    "FAR_TRANSFER": {"purpose":"Apply the same abstract skill in a different algorithmic domain."},
+    "CONTRAST": {"purpose":"Discriminate between superficially similar problems requiring different reasoning."},
+    "RETENTION": {"purpose":"Redo after spacing to test durable recall without old-solution leakage."},
+    "STRETCH": {"purpose":"Raise difficulty one step after stable mastery evidence."},
+    "CONTEST": {"purpose":"Train time allocation, partial scoring, and decision-making under contest constraints."}
+  }
+}
