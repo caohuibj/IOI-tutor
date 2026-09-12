@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ioi-tutor/problem.schema.json",
+  "title": "IOI Tutor Problem",
+  "type": "object",
+  "required": ["problem_id", "title", "status", "sources", "difficulty", "taxonomy_version"],
+  "properties": {
+    "problem_id": {"type":"string","pattern":"^T[0-9]{6}$"},
+    "title": {"type":"string","minLength":1},
+    "status": {"enum":["INGESTED","ACTIVE","RESOLVED","ARCHIVED"]},
+    "task_type": {"enum":["BATCH","INTERACTIVE","OUTPUT_ONLY","OTHER"]},
+    "sources": {"type":"array","items":{"type":"string"},"minItems":1},
+    "taxonomy_ids": {"type":"array","items":{"type":"string"}},
+    "taxonomy_version": {"type":"string"},
+    "difficulty": {
+      "type":"object",
+      "required":["band"],
+      "properties": {
+        "band":{"enum":["D1","D2","D3","D4","D5","D6","D7","D8"]},
+        "knowledge":{"type":"integer","minimum":1,"maximum":5},
+        "insight":{"type":"integer","minimum":1,"maximum":5},
+        "modeling":{"type":"integer","minimum":1,"maximum":5},
+        "proof":{"type":"integer","minimum":1,"maximum":5},
+        "optimization":{"type":"integer","minimum":1,"maximum":5},
+        "implementation":{"type":"integer","minimum":1,"maximum":5},
+        "debugging":{"type":"integer","minimum":1,"maximum":5}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}
