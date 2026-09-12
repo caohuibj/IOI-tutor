@@ -1,0 +1,11 @@
+{
+  "name": "ioi-tutor",
+  "version": "0.1.0",
+  "description": "Persistent no-spoiler OI/IOI coaching with code diagnosis and adaptive training.",
+  "student_state_source": "notion",
+  "tutor_knowledge_source": "github:caohuibj/IOI-tutor",
+  "code_source": "github:caohuibj/OI-training",
+  "taxonomy_version": "0.1.0",
+  "skill_graph_version": "0.1.0",
+  "training_rules_version": "0.1.0"
+}
