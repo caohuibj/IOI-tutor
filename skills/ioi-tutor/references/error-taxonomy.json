@@ -1,0 +1,56 @@
+{
+  "version": "0.1.0",
+  "categories": {
+    "UND": "Understanding",
+    "KNW": "Knowledge",
+    "MOD": "Modeling",
+    "ALG": "Algorithm",
+    "PRF": "Correctness Reasoning",
+    "CMP": "Complexity",
+    "IMP": "Implementation",
+    "DBG": "Debugging",
+    "STR": "Contest Strategy"
+  },
+  "errors": {
+    "UND.CONSTRAINT_MISREAD": {"category":"UND","name":"Constraint misread","skills":["problem.constraint-reading"]},
+    "UND.TASK_MISREAD": {"category":"UND","name":"Task requirement misread","skills":["problem.semantic-reading"]},
+
+    "KNW.MISSING_TECHNIQUE": {"category":"KNW","name":"Required technique unknown","skills":["knowledge.repertoire"]},
+
+    "MOD.WRONG_ABSTRACTION": {"category":"MOD","name":"Wrong abstraction/model","skills":["modeling.abstraction"]},
+    "MOD.MISSED_MONOTONICITY": {"category":"MOD","name":"Missed monotonic structure","skills":["pattern.monotonicity"]},
+    "MOD.MISSED_INVARIANT": {"category":"MOD","name":"Missed invariant","skills":["reasoning.invariant"]},
+    "MOD.MISSED_CONTRIBUTION_VIEW": {"category":"MOD","name":"Missed contribution reframing","skills":["pattern.contribution"]},
+    "MOD.BOUNDARY_DEFINITION_UNCLEAR": {"category":"MOD","name":"Boundary/state semantics not defined precisely","skills":["modeling.boundary-definition"]},
+
+    "ALG.DP.STATE_INCOMPLETE": {"category":"ALG","name":"DP state is not sufficient for future transitions","skills":["dp.state-design","state.sufficiency"]},
+    "ALG.DP.STATE_REDUNDANT": {"category":"ALG","name":"DP state contains avoidable dimensions","skills":["dp.state-compression","complexity.state-count"]},
+    "ALG.DP.TRANSITION_INVALID": {"category":"ALG","name":"DP transition violates state semantics","skills":["dp.transition"]},
+    "ALG.DP.ORDER_INVALID": {"category":"ALG","name":"DP evaluation order violates dependencies","skills":["dp.order"]},
+    "ALG.GREEDY.INVALID_CHOICE": {"category":"ALG","name":"Greedy choice is not globally safe","skills":["greedy.choice","reasoning.exchange"]},
+    "ALG.GRAPH.VISITED_SEMANTICS": {"category":"ALG","name":"Visited/state semantics invalid","skills":["graph.state-model"]},
+    "ALG.GRAPH.WRONG_STATE_GRAPH": {"category":"ALG","name":"Wrong graph/state-space construction","skills":["graph.state-model","modeling.abstraction"]},
+
+    "PRF.MISSING_INVARIANT": {"category":"PRF","name":"Correctness depends on unstated invariant","skills":["reasoning.invariant"]},
+    "PRF.INVALID_CASE_SPLIT": {"category":"PRF","name":"Case analysis is incomplete or overlapping","skills":["reasoning.case-analysis"]},
+
+    "CMP.TIME_UNDERESTIMATED": {"category":"CMP","name":"Time complexity underestimated","skills":["complexity.analysis"]},
+    "CMP.HIDDEN_QUADRATIC": {"category":"CMP","name":"Hidden quadratic behavior","skills":["complexity.analysis"]},
+    "CMP.STATE_EXPLOSION": {"category":"CMP","name":"State space too large","skills":["complexity.state-count","dp.state-compression"]},
+    "CMP.CONSTANT_FACTOR": {"category":"CMP","name":"Constant-factor performance failure","skills":["complexity.constants"]},
+
+    "IMP.OFF_BY_ONE": {"category":"IMP","name":"Off-by-one error","skills":["implementation.boundaries"]},
+    "IMP.INTEGER_OVERFLOW": {"category":"IMP","name":"Integer overflow","skills":["implementation.numeric-safety"]},
+    "IMP.ARRAY_BOUND": {"category":"IMP","name":"Out-of-bounds access","skills":["implementation.boundaries"]},
+    "IMP.UNINITIALIZED_STATE": {"category":"IMP","name":"Uninitialized/incorrectly reset state","skills":["implementation.state-lifecycle"]},
+    "IMP.RECURSION_DEPTH": {"category":"IMP","name":"Unsafe recursion depth","skills":["implementation.runtime-safety"]},
+
+    "DBG.NO_MINIMAL_COUNTEREXAMPLE": {"category":"DBG","name":"Failed to reduce failure to a minimal counterexample","skills":["debugging.counterexample"]},
+    "DBG.TEST_COVERAGE_WEAK": {"category":"DBG","name":"Local testing misses important cases","skills":["debugging.test-design"]},
+
+    "STR.PREMATURE_CODING": {"category":"STR","name":"Coding before model/invariant is sufficiently defined","skills":["strategy.precode-proof"]},
+    "STR.OVERENGINEERING": {"category":"STR","name":"Overengineered solution path","skills":["strategy.simplicity"]},
+    "STR.NO_PARTIAL_STRATEGY": {"category":"STR","name":"No deliberate partial-score/subtask strategy","skills":["strategy.partial-score"]},
+    "STR.TIME_ALLOCATION": {"category":"STR","name":"Poor contest time allocation","skills":["strategy.time-management"]}
+  }
+}
