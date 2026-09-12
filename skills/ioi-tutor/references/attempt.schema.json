@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ioi-tutor/attempt.schema.json",
+  "title": "IOI Tutor Attempt",
+  "type": "object",
+  "required": ["attempt_id", "problem_id", "attempt_no", "status", "hint_max", "hint_count"],
+  "properties": {
+    "attempt_id": {"type":"string","pattern":"^T[0-9]{6}-A[0-9]{2,}$"},
+    "problem_id": {"type":"string","pattern":"^T[0-9]{6}$"},
+    "attempt_no": {"type":"integer","minimum":1},
+    "status": {"enum":["ATTEMPTING","SUBMITTED","REVIEW","RESOLVED","ABANDONED"]},
+    "started_at": {"type":["string","null"],"format":"date-time"},
+    "finished_at": {"type":["string","null"],"format":"date-time"},
+    "duration_min": {"type":["number","null"],"minimum":0},
+    "hint_max": {"enum":["H0","H1","H2","H3","H4","H5","H6"]},
+    "hint_count": {"type":"integer","minimum":0},
+    "final_score": {"type":["number","null"]},
+    "final_verdict": {"enum":["AC","WA","TLE","MLE","RE","CE","PARTIAL","UNSOLVED","UNTESTED",null]},
+    "independent": {"type":"boolean"},
+    "contest_mode": {"type":"boolean"}
+  },
+  "additionalProperties": true
+}
