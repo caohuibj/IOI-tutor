@@ -1,0 +1,49 @@
+{
+  "version": "0.1.0",
+  "skills": {
+    "problem.semantic-reading": {"domain":"GENERAL","prerequisites":[]},
+    "problem.constraint-reading": {"domain":"GENERAL","prerequisites":[]},
+    "knowledge.repertoire": {"domain":"ALGORITHM","prerequisites":[]},
+    "modeling.abstraction": {"domain":"ALGORITHM","prerequisites":["problem.semantic-reading"]},
+    "modeling.boundary-definition": {"domain":"GENERAL","prerequisites":["problem.semantic-reading"]},
+    "state.sufficiency": {"domain":"GENERAL","prerequisites":["modeling.abstraction"]},
+    "pattern.monotonicity": {"domain":"ALGORITHM","prerequisites":["complexity.analysis"]},
+    "pattern.contribution": {"domain":"ALGORITHM","prerequisites":["modeling.abstraction"]},
+    "reasoning.invariant": {"domain":"ALGORITHM","prerequisites":["modeling.abstraction"]},
+    "reasoning.exchange": {"domain":"ALGORITHM","prerequisites":["reasoning.invariant"]},
+    "reasoning.case-analysis": {"domain":"GENERAL","prerequisites":[]},
+
+    "dp.recognition": {"domain":"DP","prerequisites":["modeling.abstraction"]},
+    "dp.state-design": {"domain":"DP","prerequisites":["dp.recognition","state.sufficiency"]},
+    "dp.transition": {"domain":"DP","prerequisites":["dp.state-design"]},
+    "dp.order": {"domain":"DP","prerequisites":["dp.transition"]},
+    "dp.state-compression": {"domain":"DP","prerequisites":["dp.state-design","complexity.state-count"]},
+
+    "graph.state-model": {"domain":"GRAPH","prerequisites":["modeling.abstraction"]},
+    "greedy.choice": {"domain":"ALGORITHM","prerequisites":["reasoning.exchange"]},
+
+    "complexity.analysis": {"domain":"ALGORITHM","prerequisites":[]},
+    "complexity.state-count": {"domain":"ALGORITHM","prerequisites":["complexity.analysis"]},
+    "complexity.constants": {"domain":"ALGORITHM","prerequisites":["complexity.analysis"]},
+
+    "implementation.boundaries": {"domain":"IMPLEMENTATION","prerequisites":["modeling.boundary-definition"]},
+    "implementation.numeric-safety": {"domain":"IMPLEMENTATION","prerequisites":[]},
+    "implementation.state-lifecycle": {"domain":"IMPLEMENTATION","prerequisites":[]},
+    "implementation.runtime-safety": {"domain":"IMPLEMENTATION","prerequisites":[]},
+
+    "debugging.counterexample": {"domain":"DEBUGGING","prerequisites":["reasoning.case-analysis"]},
+    "debugging.test-design": {"domain":"DEBUGGING","prerequisites":["debugging.counterexample"]},
+
+    "strategy.precode-proof": {"domain":"STRATEGY","prerequisites":["reasoning.invariant"]},
+    "strategy.simplicity": {"domain":"STRATEGY","prerequisites":["complexity.analysis"]},
+    "strategy.partial-score": {"domain":"STRATEGY","prerequisites":["problem.constraint-reading","complexity.analysis"]},
+    "strategy.time-management": {"domain":"STRATEGY","prerequisites":[]}
+  },
+  "mastery_evidence": {
+    "recognize": 1,
+    "derive": 2,
+    "implement": 2,
+    "transfer": 3,
+    "retain": 3
+  }
+}
