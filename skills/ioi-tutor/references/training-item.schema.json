@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ioi-tutor/training-item.schema.json",
+  "title": "IOI Tutor Training Item",
+  "type": "object",
+  "required": ["training_id", "mode", "target_skill", "priority", "status"],
+  "properties": {
+    "training_id": {"type":"string","pattern":"^TR[0-9]{6}$"},
+    "mode": {"enum":["REPAIR","NEAR_TRANSFER","FAR_TRANSFER","CONTRAST","RETENTION","STRETCH","CONTEST"]},
+    "target_skill": {"type":"string"},
+    "problem_id": {"type":["string","null"]},
+    "origin_attempt_id": {"type":["string","null"]},
+    "priority": {"type":"number"},
+    "due": {"type":["string","null"],"format":"date"},
+    "status": {"enum":["QUEUED","IN_PROGRESS","DONE","SKIPPED"]},
+    "notes": {"type":["string","null"]}
+  },
+  "additionalProperties": true
+}
