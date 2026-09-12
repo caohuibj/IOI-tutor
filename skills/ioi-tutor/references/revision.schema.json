@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ioi-tutor/revision.schema.json",
+  "title": "IOI Tutor Code Revision",
+  "type": "object",
+  "required": ["revision_id", "attempt_id", "revision_no", "language", "judge_result"],
+  "properties": {
+    "revision_id": {"type":"string","pattern":"^T[0-9]{6}-A[0-9]{2,}-R[0-9]{2,}$"},
+    "attempt_id": {"type":"string"},
+    "revision_no": {"type":"integer","minimum":1},
+    "language": {"enum":["CPP17","CPP20","CPP23","PYTHON","OTHER"]},
+    "judge_result": {"enum":["AC","WA","TLE","MLE","RE","CE","PARTIAL","UNTESTED"]},
+    "score": {"type":["number","null"]},
+    "time_ms": {"type":["number","null"],"minimum":0},
+    "memory_mb": {"type":["number","null"],"minimum":0},
+    "github_repo": {"type":["string","null"]},
+    "github_path": {"type":["string","null"]},
+    "commit_sha": {"type":["string","null"]},
+    "code_url": {"type":["string","null"],"format":"uri"}
+  },
+  "additionalProperties": true
+}
