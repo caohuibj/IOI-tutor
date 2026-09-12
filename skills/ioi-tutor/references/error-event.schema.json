@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ioi-tutor/error-event.schema.json",
+  "title": "IOI Tutor Error Event",
+  "type": "object",
+  "required": ["error_event_id", "attempt_id", "error_code", "role", "category", "confidence", "taxonomy_version"],
+  "properties": {
+    "error_event_id": {"type":"string","pattern":"^E[0-9]{6}$"},
+    "attempt_id": {"type":"string"},
+    "revision_id": {"type":["string","null"]},
+    "error_code": {"type":"string"},
+    "role": {"enum":["ROOT_CAUSE","SECONDARY","SYMPTOM"]},
+    "category": {"enum":["UND","KNW","MOD","ALG","PRF","CMP","IMP","DBG","STR"]},
+    "first_failure": {"type":["string","null"]},
+    "evidence": {"type":["string","null"]},
+    "confidence": {"type":"number","minimum":0,"maximum":1},
+    "skill_ids": {"type":"array","items":{"type":"string"}},
+    "taxonomy_version": {"type":"string"}
+  },
+  "additionalProperties": true
+}
