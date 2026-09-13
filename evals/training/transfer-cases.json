@@ -1,0 +1,32 @@
+{
+  "version": "0.1.0",
+  "cases": [
+    {
+      "id": "repeated-dp-state-gap",
+      "history": ["ALG.DP.STATE_INCOMPLETE", "ALG.DP.STATE_INCOMPLETE", "ALG.DP.STATE_INCOMPLETE"],
+      "profile": {"dp.recognition": 82, "dp.state-design": 51, "state.sufficiency": 47},
+      "expected": ["REPAIR", "NEAR_TRANSFER", "FAR_TRANSFER", "RETENTION"],
+      "must_prioritize_skill": "dp.state-design",
+      "must_not": ["recommend only generic DP problems", "recommend three identical template problems"]
+    },
+    {
+      "id": "recognition-high-modeling-low",
+      "profile": {"dp.recognition": 88, "dp.state-design": 58},
+      "expected_problem_characteristic": "disguised or modeling-heavy DP",
+      "avoid": "obvious template recognition drills"
+    },
+    {
+      "id": "partial-score-gap",
+      "history": ["STR.NO_PARTIAL_STRATEGY", "STR.NO_PARTIAL_STRATEGY"],
+      "expected": ["REPAIR", "CONTEST"],
+      "must_prioritize_skill": "strategy.partial-score"
+    },
+    {
+      "id": "implementation-strong-transfer-weak",
+      "profile": {"dp.state-design": 76, "implementation.boundaries": 90},
+      "evidence": "Standard tagged problems are solved, hidden transfer cases fail.",
+      "expected": ["FAR_TRANSFER", "CONTRAST", "RETENTION"],
+      "avoid": "more implementation-only drills"
+    }
+  ]
+}
