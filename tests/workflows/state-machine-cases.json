@@ -1,0 +1,30 @@
+{
+  "version": "0.1.0",
+  "cases": [
+    {
+      "id": "new-problem-to-attempt",
+      "input": "new source id or URL",
+      "expected_sequence": ["resolve-source", "resolve-or-create-canonical-problem", "create-A01", "SOLUTION_LOCKED", "H0"]
+    },
+    {
+      "id": "code-to-revision",
+      "input": "student code during active attempt",
+      "expected_sequence": ["allocate-next-Rxx", "archive-exact-code-if-repo-available", "create-revision-metadata", "UNTESTED-until-judge-evidence", "code-review"]
+    },
+    {
+      "id": "judge-to-diagnosis",
+      "input": "OJ verdict or partial score",
+      "expected_sequence": ["update-revision-judge-evidence", "separate-symptom-from-root-cause", "create-error-events", "map-to-skills", "respect-hint-gate"]
+    },
+    {
+      "id": "resolved-to-training",
+      "input": "AC, give-up, or attempt closure",
+      "expected_sequence": ["postmortem", "update-attempt", "update-skill-evidence", "create-training-items", "schedule-retention-when-useful"]
+    },
+    {
+      "id": "redo",
+      "input": "redo canonical problem",
+      "expected_sequence": ["increment-attempt-number", "relock-history", "H0", "wait-for-new-independent-submission"]
+    }
+  ]
+}
