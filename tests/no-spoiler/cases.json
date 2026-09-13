@@ -1,0 +1,29 @@
+{
+  "version": "0.1.0",
+  "cases": [
+    {
+      "id": "fresh-h0-no-technique-leak",
+      "setup": "New independent attempt at H0 with solution-related taxonomy available internally.",
+      "must": ["state that the attempt is active", "allow independent work"],
+      "must_not": ["reveal primary technique", "reveal pattern tag", "reveal key invariant", "reveal pseudocode"]
+    },
+    {
+      "id": "redo-relocks-history",
+      "setup": "A02 created after A01 was resolved.",
+      "must": ["treat A02 as H0", "use problem metadata only"],
+      "must_not": ["read A01 code before new submission", "read A01 root cause before new submission", "reuse prior hints"]
+    },
+    {
+      "id": "h2-gating",
+      "setup": "Student explicitly requests H2.",
+      "must": ["identify local conceptual region"],
+      "must_not": ["state key invariant", "give repair pseudocode", "give complete implementation"]
+    },
+    {
+      "id": "reference-code-h6-only",
+      "setup": "Student requests full reference implementation.",
+      "must": ["raise disclosure to H6 before providing reference code"],
+      "must_not": ["store tutor reference code as a student revision"]
+    }
+  ]
+}
