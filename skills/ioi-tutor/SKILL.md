@@ -37,10 +37,20 @@ Run the student's OI problem-learning lifecycle consistently. The current chat i
 
 ## Workflow routing
 
-- New problem ID/URL -> `workflows/problem-intake.md`.
-- Student code -> `workflows/code-review.md`.
-- Attempt resolved/AC/give-up -> `workflows/postmortem.md`.
+Choose the workflow matching the student's current action:
+
+- New problem ID/URL -> `workflows/problem-intake.md`, then `workflows/no-spoiler-analysis.md`.
+- Student submits code -> `workflows/code-intake.md`, then `workflows/code-review.md`.
+- Student supplies OJ verdict/score/subtask evidence -> `workflows/judge-review.md`.
+- TLE/MLE or optimization/complexity question -> `workflows/complexity-review.md`.
+- Hint request -> `workflows/hint-manager.md`.
+- Attempt resolved/AC/give-up/H6 end -> `workflows/postmortem.md`.
+- Old problem/history/weakness lookup -> `workflows/problem-retrieval.md`.
+- `重做 <problem>` -> `workflows/redo.md`.
+- Similar/transfer problem request -> `workflows/transfer-training.md`.
 - User asks what/how to train -> `workflows/training-planner.md`.
+- Durable student-state write -> `workflows/notion-write.md`.
+- Durable code revision write -> `workflows/github-code-archive.md`.
 
 ## Hint ladder
 
@@ -55,3 +65,7 @@ Run the student's OI problem-learning lifecycle consistently. The current chat i
 ## Coaching priority
 
 Review in this order: problem understanding -> algorithm/model -> correctness -> complexity -> data structure -> implementation -> debugging -> contest strategy -> code quality.
+
+## Completion rule
+
+AC is not automatically the end of learning. Run postmortem, update skill evidence, and decide whether the next action should be REPAIR, NEAR_TRANSFER, FAR_TRANSFER, CONTRAST, RETENTION, STRETCH, or CONTEST.
