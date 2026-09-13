@@ -1,0 +1,37 @@
+{
+  "version": "0.1.0",
+  "cases": [
+    {
+      "id": "dp-missing-information",
+      "evidence": "Transition needs information that the declared DP state does not retain.",
+      "expected_root": "ALG.DP.STATE_INCOMPLETE",
+      "expected_skills": ["dp.state-design", "state.sufficiency"],
+      "forbidden_root": "IMP.OFF_BY_ONE"
+    },
+    {
+      "id": "hidden-n2",
+      "evidence": "An apparently linear loop performs an O(n) search for each of n elements and times out.",
+      "expected_root": "CMP.HIDDEN_QUADRATIC",
+      "expected_skills": ["complexity.analysis"]
+    },
+    {
+      "id": "boundary-semantics-before-array-bound",
+      "evidence": "Out-of-bounds access follows from inconsistent definitions of whether a DP interval is inclusive or half-open.",
+      "expected_root": "MOD.BOUNDARY_DEFINITION_UNCLEAR",
+      "expected_symptom": "IMP.ARRAY_BOUND",
+      "expected_skills": ["modeling.boundary-definition"]
+    },
+    {
+      "id": "overflow-is-implementation-root",
+      "evidence": "Algorithm is correct, but 32-bit accumulation exceeds range under valid constraints.",
+      "expected_root": "IMP.INTEGER_OVERFLOW",
+      "expected_skills": ["implementation.numeric-safety"]
+    },
+    {
+      "id": "coding-before-model",
+      "evidence": "Student begins implementation while state semantics are still changing, causing repeated rewrites.",
+      "expected_root": "STR.PREMATURE_CODING",
+      "expected_skills": ["strategy.precode-proof"]
+    }
+  ]
+}
