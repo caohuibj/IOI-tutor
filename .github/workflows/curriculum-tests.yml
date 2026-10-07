@@ -1,14 +1,17 @@
 name: Curriculum metadata adapter tests
 
 on:
+  workflow_dispatch:
   pull_request:
     paths:
       - "tools/usaco_guide_catalog.py"
+      - "tools/catalog_checklist_policy.py"
       - "tests/curriculum/**"
       - ".github/workflows/curriculum-tests.yml"
   push:
     paths:
       - "tools/usaco_guide_catalog.py"
+      - "tools/catalog_checklist_policy.py"
       - "tests/curriculum/**"
       - ".github/workflows/curriculum-tests.yml"
 
@@ -25,12 +28,14 @@ jobs:
       - name: Offline unit tests
         run: python -m unittest discover -s tests/curriculum -p 'test_*.py' -v
       - name: Syntax check
-        run: python -m py_compile tools/usaco_guide_catalog.py
+        run: python -m py_compile tools/usaco_guide_catalog.py tools/catalog_checklist_policy.py
       - name: Live upstream smoke test (3 pilot modules; no content persisted)
+        if: github.event_name == 'workflow_dispatch'
         run: |
           python tools/usaco_guide_catalog.py --module gold:intro-dp --module gold:dsu --module plat:binary-jump --output /tmp/usaco-guide-pilot.json
           python -c "import json; x=json.load(open('/tmp/usaco-guide-pilot.json')); assert x['statistics']['modules']==3; assert x['statistics']['module_problem_memberships']>0; print(x['source']['commit_sha'], x['statistics'])"
       - name: Full Gold and Platinum metadata smoke test (read-only)
+        if: github.event_name == 'workflow_dispatch'
         run: |
           python tools/usaco_guide_catalog.py --division gold --division plat --output /tmp/usaco-guide-full.json
           python -c "import json; x=json.load(open('/tmp/usaco-guide-full.json')); assert x['statistics']['modules']>=51; assert x['statistics']['module_problem_memberships']>=650; print(x['source']['commit_sha'], x['statistics'])"
