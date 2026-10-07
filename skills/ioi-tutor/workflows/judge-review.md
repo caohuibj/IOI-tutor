@@ -19,3 +19,7 @@ Use when the student provides OJ feedback for an existing Revision.
 7. If AC or the Attempt ends, continue to `postmortem.md`; otherwise remain in the same Attempt and wait for the next student Revision.
 
 Partial scoring is meaningful evidence. Diagnose which subtask/constraint transition separates the current solution from higher-scoring solutions when that can be inferred safely.
+
+## Guide checklist on judge evidence
+
+For a matched Guide entry, update checklist from actual current Attempt/Revision verdict. On AC set Status=SOLVED, Completed=checked. Use JUDGE_CONFIRMED only when an independent verifiable judge result was checked; if the learner merely reports AC, use SELF_REPORTED. WA/TLE/PARTIAL do not imply completion. A failed Redo must not erase earlier completed evidence. See catalog-checklist.md.

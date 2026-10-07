@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ioi-tutor/module-progress.schema.json",
+  "title": "Student Module Progress",
+  "type": "object",
+  "required": [
+    "progress_id",
+    "goal_id",
+    "module_key",
+    "progress_status",
+    "mastery_status"
+  ],
+  "properties": {
+    "progress_id": {
+      "type": "string",
+      "pattern": "^MP[0-9]{6}$"
+    },
+    "goal_id": {
+      "type": "string",
+      "pattern": "^G[0-9]{6}$"
+    },
+    "module_key": {
+      "type": "string",
+      "pattern": "^USACO_GUIDE:(gold|plat):[A-Za-z0-9_-]+$"
+    },
+    "progress_status": {
+      "enum": [
+        "NOT_STARTED",
+        "LEARNING",
+        "PRACTICING",
+        "REVIEWING",
+        "COMPLETED"
+      ]
+    },
+    "mastery_status": {
+      "enum": [
+        "UNKNOWN",
+        "DEVELOPING",
+        "PROFICIENT",
+        "VERIFIED"
+      ]
+    },
+    "prerequisites_met": {
+      "enum": [
+        "UNKNOWN",
+        "YES",
+        "NO"
+      ]
+    },
+    "independent_evidence": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "transfer_evidence": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "retention_evidence": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "curriculum_commit": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "next_review": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

@@ -63,3 +63,15 @@ Resolved/abandoned → postmortem → Skill Profile → Training Queue.
 Training request → consult Training Queue + Skill Profile + due/spacing → choose task → start locked Attempt.
 
 Detailed versioned behavior always comes from the current `caohuibj/IOI-tutor` repository. If Project documentation conflicts with it, GitHub rules win; Notion remains authoritative for student state and `caohuibj/OI-Training` for student code.
+
+
+## Curriculum training (v0.2 pilot)
+
+Core learning curriculum: https://usaco.guide/ (Gold then Platinum). Official USACO Guide is authoritative for course modules, prerequisites, native problem links, and module-relative difficulty. GitHub caohuibj/IOI-tutor owns the curriculum adapter, Tutor mapping, progression/assessment criteria and workflows. Notion owns student Goals, Module Progress and Assessments when provisioned.
+
+Goal requests → goal-planner → curriculum-discovery → training-planner → existing H0 Attempt lifecycle. Blank Skill Profile means UNKNOWN; do not fabricate mastery. Guided module study and blind assessment require distinct topic-exposure rules. Neither lesson completion nor a raw AC count proves Gold/Platinum readiness or official promotion. Do not publicly reproduce the licensed Guide curriculum, lessons or editorials. For the student's explicitly requested private personal checklist, retain only attributed minimal problem IDs, original links and module-relative metadata at a pinned upstream version.
+
+## Guide checklist across chats
+
+On every problem ID/URL, check the private Notion child database "USACO Guide 题目清单" by original OJ identity/Guide uniqueId before the normal Attempt lifecycle. When matched, link the canonical T ID and current Attempt without allocating duplicate Problems; set ATTEMPTING. Code alone → SUBMITTED_UNTESTED. Only a real reported/verified AC → SOLVED and Completed checked, with evidence type. Keep completion on redo and distinguish UNTRACKED from unsolved. Do not claim a checkmark unless a Notion update succeeded. Rules: workflows/catalog-checklist.md. No Guide registration is required; this does not monitor OJ submissions in the background.
+

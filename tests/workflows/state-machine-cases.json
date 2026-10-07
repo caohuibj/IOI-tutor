@@ -1,30 +1,109 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0-dev.2",
   "cases": [
     {
       "id": "new-problem-to-attempt",
       "input": "new source id or URL",
-      "expected_sequence": ["resolve-source", "resolve-or-create-canonical-problem", "create-A01", "SOLUTION_LOCKED", "H0"]
+      "expected_sequence": [
+        "resolve-source",
+        "resolve-or-create-canonical-problem",
+        "create-A01",
+        "SOLUTION_LOCKED",
+        "H0"
+      ]
     },
     {
       "id": "code-to-revision",
       "input": "student code during active attempt",
-      "expected_sequence": ["allocate-next-Rxx", "archive-exact-code-if-repo-available", "create-revision-metadata", "UNTESTED-until-judge-evidence", "code-review"]
+      "expected_sequence": [
+        "allocate-next-Rxx",
+        "archive-exact-code-if-repo-available",
+        "create-revision-metadata",
+        "UNTESTED-until-judge-evidence",
+        "code-review"
+      ]
     },
     {
       "id": "judge-to-diagnosis",
       "input": "OJ verdict or partial score",
-      "expected_sequence": ["update-revision-judge-evidence", "separate-symptom-from-root-cause", "create-error-events", "map-to-skills", "respect-hint-gate"]
+      "expected_sequence": [
+        "update-revision-judge-evidence",
+        "separate-symptom-from-root-cause",
+        "create-error-events",
+        "map-to-skills",
+        "respect-hint-gate"
+      ]
     },
     {
       "id": "resolved-to-training",
       "input": "AC, give-up, or attempt closure",
-      "expected_sequence": ["postmortem", "update-attempt", "update-skill-evidence", "create-training-items", "schedule-retention-when-useful"]
+      "expected_sequence": [
+        "postmortem",
+        "update-attempt",
+        "update-skill-evidence",
+        "create-training-items",
+        "schedule-retention-when-useful"
+      ]
     },
     {
       "id": "redo",
       "input": "redo canonical problem",
-      "expected_sequence": ["increment-attempt-number", "relock-history", "H0", "wait-for-new-independent-submission"]
+      "expected_sequence": [
+        "increment-attempt-number",
+        "relock-history",
+        "H0",
+        "wait-for-new-independent-submission"
+      ]
+    },
+    {
+      "id": "spontaneous-guide-problem",
+      "input": "Guide-listed OJ URL in any problem chat",
+      "expected_sequence": [
+        "exact-judge-identity",
+        "find-checklist-row",
+        "resolve-reuse-canonical-problem",
+        "new-H0-attempt",
+        "update-checklist-ATTEMPTING"
+      ]
+    },
+    {
+      "id": "unlisted-problem",
+      "input": "OJ URL absent from USACO Guide",
+      "expected_sequence": [
+        "no-exact-guide-match",
+        "continue-original-intake",
+        "do-not-invent-catalog-entry"
+      ]
+    },
+    {
+      "id": "code-not-AC",
+      "input": "student code without OJ result",
+      "expected_sequence": [
+        "archive-revision",
+        "UNTESTED",
+        "checklist-SUBMITTED_UNTESTED",
+        "Completed-remains-unchanged"
+      ]
+    },
+    {
+      "id": "ac-checkmark",
+      "input": "real user-reported AC",
+      "expected_sequence": [
+        "record-judge-evidence",
+        "checklist-SOLVED",
+        "Completed-checked",
+        "CompletionEvidence-SELF_REPORTED-until-independently-verified"
+      ]
+    },
+    {
+      "id": "redo-checkmark-preservation",
+      "input": "redo formerly solved Guide problem",
+      "expected_sequence": [
+        "new-Axx",
+        "H0-relock",
+        "checklist-REVIEWING",
+        "Completed-preserved"
+      ]
     }
   ]
 }

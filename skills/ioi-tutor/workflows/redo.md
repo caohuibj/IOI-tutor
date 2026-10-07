@@ -26,3 +26,7 @@ Neutral metadata such as statement/source, global difficulty and task constraint
 6. Only after resolution/postmortem may the Tutor compare A01/A02/etc. for time, hints, submissions, score, root-cause recurrence and transfer/retention evidence.
 
 A redo must never create a duplicate canonical Problem.
+
+## Checklist on redo
+
+For a matched Guide problem, keep one checklist row and preserve the historical Completed/Evidence values. Mark current Status=REVIEWING and write the new Attempt ID; do not read prior code/errors/hints/solution history merely to update the catalog. A Redo WA never removes an earlier success check. See catalog-checklist.md.

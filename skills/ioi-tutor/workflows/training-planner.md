@@ -45,3 +45,12 @@ Do not claim a precise ML score in v0.1; this is a rule-based coach.
 Create/update Notion Training Queue entries with Mode, Target Skill, Priority, Due, Origin Attempt, optional target Problem, and concise rationale.
 
 When the user says `训练` or gives a time budget, select from queued items by due date/priority and construct a balanced session rather than generating unrelated recommendations.
+
+
+## Curriculum-goal extension (v0.2 pilot)
+
+For a Gold/Platinum target, invoke goal-planner.md before ordinary Training Planner ranking. Read Learning Goals, Module Progress and assessment evidence when the new Notion tables exist. The curriculum provider supplies candidate modules/problems and upstream prerequisites; Tutor Skill Profile supplies student-specific mastery estimates. Neither source may substitute for the other.
+
+When Skill Profile is empty or novelty/exposure data are unknown, report UNKNOWN and begin with a small diagnostic task instead of declaring readiness or treating zero as failure. Avoid inserting the entire Guide question list into Training Queue: select a few justified tasks only. Preserve the v0.1 ranking factors and modes, adding goal distance, prerequisite readiness and module verification gaps as explicit ranking inputs.
+
+Never use module/topic labels to leak the intended algorithm in BLIND_ASSESSMENT. Course completion, verified transfer and official USACO qualification are separate states.

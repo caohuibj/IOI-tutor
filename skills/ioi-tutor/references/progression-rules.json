@@ -1,0 +1,37 @@
+{
+  "version": "0.2.0-dev.1",
+  "status": "PROVISIONAL_INTERNAL_NOT_USACO_OFFICIAL",
+  "module_verified": {
+    "independent_distinct_problem_evidence_min": 2,
+    "transfer_evidence_min": 1,
+    "retention_evidence_min": 1,
+    "require_correctness_or_complexity_explanation": true,
+    "notes": "These are initial evidence guidelines, not automatic promotion thresholds. Quality, novelty and overlap must be reviewed."
+  },
+  "division_readiness": {
+    "requires_core_module_review": true,
+    "min_unseen_contest_sittings_for_initial_review": 5,
+    "requires_contest_performance_review": true,
+    "requires_no_solution_or_topic_leak_in_assessment": true,
+    "never_equate_to_official_usaco_promotion": true,
+    "states": [
+      "NOT_READY",
+      "CONDITIONALLY_READY",
+      "READY",
+      "INSUFFICIENT_EVIDENCE"
+    ]
+  },
+  "assessment_holdout": {
+    "prior_attempt_or_known_editorial": "EXCLUDE",
+    "unknown_prior_exposure": "MANUAL_REVIEW_OR_EXCLUDE",
+    "previously_assigned_practice": "EXCLUDE",
+    "record_upstream_source_and_commit": true
+  },
+  "evidence_notes": [
+    "A module marked COMPLETED is not necessarily VERIFIED.",
+    "H0 means no Tutor-provided hints; prior topic exposure is tracked separately.",
+    "No Skill Profile evidence means UNKNOWN, not weak and not mastered.",
+    "Do not auto-graduate based on a raw number of solved problems.",
+    "Grandfather prior Attempts as historical evidence without rewriting their provenance."
+  ]
+}
