@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ioi-tutor/assessment.schema.json",
+  "title": "Student Curriculum Assessment",
+  "type": "object",
+  "required": [
+    "assessment_id",
+    "goal_id",
+    "assessment_type",
+    "status",
+    "mode",
+    "result"
+  ],
+  "properties": {
+    "assessment_id": {
+      "type": "string",
+      "pattern": "^AS[0-9]{6}$"
+    },
+    "goal_id": {
+      "type": "string",
+      "pattern": "^G[0-9]{6}$"
+    },
+    "assessment_type": {
+      "enum": [
+        "BASELINE",
+        "MODULE",
+        "DIVISION",
+        "CONTEST_SIMULATION"
+      ]
+    },
+    "status": {
+      "enum": [
+        "PLANNED",
+        "ACTIVE",
+        "COMPLETED",
+        "VOID"
+      ]
+    },
+    "mode": {
+      "enum": [
+        "GUIDED_LEARNING",
+        "BLIND_ASSESSMENT"
+      ]
+    },
+    "result": {
+      "enum": [
+        "PENDING",
+        "PASS",
+        "RETRY",
+        "FAIL",
+        "INSUFFICIENT_EVIDENCE"
+      ]
+    },
+    "attempt_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^T[0-9]{6}-A[0-9]{2}$"
+      }
+    },
+    "duration_min": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "curriculum_commit": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "rationale": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,271 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/caohuibj/IOI-tutor/blob/main/skills/ioi-tutor/references/curriculum-provider.schema.json",
+  "title": "USACO Guide read-only metadata snapshot v0.2",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "provider",
+    "source",
+    "semantics",
+    "modules",
+    "problems",
+    "memberships",
+    "statistics"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.2.0"
+    },
+    "provider": {
+      "const": "USACO_GUIDE"
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "repository",
+        "commit_sha",
+        "guide_url",
+        "license_url",
+        "retrieved_at_utc"
+      ],
+      "properties": {
+        "repository": {
+          "const": "cpinitiative/usaco-guide"
+        },
+        "commit_sha": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$"
+        },
+        "guide_url": {
+          "const": "https://usaco.guide/"
+        },
+        "license_url": {
+          "const": "https://usaco.guide/license"
+        },
+        "retrieved_at_utc": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "additionalProperties": false
+    },
+    "semantics": {
+      "type": "object",
+      "required": [
+        "relative_difficulty",
+        "tags_and_editorial",
+        "canonical_identity"
+      ],
+      "properties": {
+        "relative_difficulty": {
+          "type": "string"
+        },
+        "tags_and_editorial": {
+          "type": "string"
+        },
+        "canonical_identity": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "modules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "module_key",
+          "division",
+          "module_kind",
+          "category",
+          "rank",
+          "guide_module_id",
+          "title",
+          "guide_url",
+          "upstream_mdx_path",
+          "upstream_problem_list_path",
+          "prerequisite_module_ids",
+          "frequency_raw",
+          "membership_count"
+        ],
+        "properties": {
+          "module_key": {
+            "type": "string",
+            "pattern": "^USACO_GUIDE:(gold|plat):[A-Za-z0-9_-]+$"
+          },
+          "division": {
+            "enum": [
+              "gold",
+              "plat"
+            ]
+          },
+          "category": {
+            "type": "string"
+          },
+          "rank": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "guide_module_id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "guide_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "upstream_mdx_path": {
+            "type": "string"
+          },
+          "upstream_problem_list_path": {
+            "type": "string"
+          },
+          "prerequisite_module_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "frequency_raw": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "membership_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "module_kind": {
+            "enum": [
+              "LESSON",
+              "CONCLUSION"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "problems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "guide_problem_id",
+          "title",
+          "original_oj_url",
+          "original_source_label"
+        ],
+        "properties": {
+          "guide_problem_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "original_oj_url": {
+            "type": "string",
+            "pattern": "^https?://"
+          },
+          "original_source_label": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "memberships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "module_key",
+          "guide_problem_id",
+          "section",
+          "position",
+          "relative_difficulty_raw",
+          "is_starred",
+          "tags_locked",
+          "editorial_kind_locked",
+          "has_hints_locked"
+        ],
+        "properties": {
+          "module_key": {
+            "type": "string"
+          },
+          "guide_problem_id": {
+            "type": "string"
+          },
+          "section": {
+            "type": "string"
+          },
+          "position": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "relative_difficulty_raw": {
+            "type": "string"
+          },
+          "is_starred": {
+            "type": "boolean"
+          },
+          "tags_locked": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "editorial_kind_locked": {
+            "type": "string"
+          },
+          "has_hints_locked": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "statistics": {
+      "type": "object",
+      "required": [
+        "modules",
+        "instructional_modules",
+        "conclusion_modules",
+        "unique_guide_problem_ids",
+        "module_problem_memberships"
+      ],
+      "properties": {
+        "modules": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unique_guide_problem_ids": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "module_problem_memberships": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "instructional_modules": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "conclusion_modules": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

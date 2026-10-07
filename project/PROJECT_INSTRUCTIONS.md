@@ -63,3 +63,10 @@ Resolved/abandoned → postmortem → Skill Profile → Training Queue.
 Training request → consult Training Queue + Skill Profile + due/spacing → choose task → start locked Attempt.
 
 Detailed versioned behavior always comes from the current `caohuibj/IOI-tutor` repository. If Project documentation conflicts with it, GitHub rules win; Notion remains authoritative for student state and `caohuibj/OI-Training` for student code.
+
+
+## Curriculum training (v0.2 pilot)
+
+Core learning curriculum: https://usaco.guide/ (Gold then Platinum). Official USACO Guide is authoritative for course modules, prerequisites, native problem links, and module-relative difficulty. GitHub caohuibj/IOI-tutor owns the curriculum adapter, Tutor mapping, progression/assessment criteria and workflows. Notion owns student Goals, Module Progress and Assessments when provisioned.
+
+Goal requests → goal-planner → curriculum-discovery → training-planner → existing H0 Attempt lifecycle. Blank Skill Profile means UNKNOWN; do not fabricate mastery. Guided module study and blind assessment require distinct topic-exposure rules. Neither lesson completion nor a raw AC count proves Gold/Platinum readiness or official promotion. Do not reproduce the entire licensed Guide catalog, lessons or editorials in GitHub/Notion; use attributed source links and pinned metadata.

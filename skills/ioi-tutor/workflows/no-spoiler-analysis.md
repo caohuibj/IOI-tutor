@@ -25,3 +25,10 @@ Do not volunteer primary algorithm, hidden transformation, DP state, key data st
 ## Redo isolation
 
 When the active Attempt is a redo, do not fetch old Revisions or Error Events unless the student has already submitted the new attempt or explicitly ends independent mode.
+
+
+## Curriculum metadata disclosure gate (v0.2 pilot)
+
+The curriculum adapter includes tags, star flags, editorial availability and source module identifiers for internal ranking. These are not automatically public H0 fields. BLIND_ASSESSMENT must not expose module or category names, explanation-bearing Guide URLs, solution hints or candidate-ranking features. In GUIDED_LEARNING, the learner may know the chosen module; still withhold problem-specific technique/invariant/repair until the H ladder permits it.
+
+An independent redo in a curriculum remains a separate locked Attempt; never inspect earlier revisions, errors, hint history or insight notes prior to the new submission.

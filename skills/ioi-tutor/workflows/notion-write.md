@@ -46,3 +46,8 @@ Finalize Attempt, update Skill Profile conservatively, and create Training Queue
 - If GitHub archival fails, keep the Notion revision metadata explicit about the missing code pointer; do not claim persistence succeeded.
 - Never create a second canonical Problem for redo.
 - Never store taxonomy definitions in Notion; store stable IDs/version only.
+
+
+## Curriculum-state extension (v0.2 pilot)
+
+Once verified present, Learning Goals, Module Progress and Assessments are additional Notion-owned student-state databases. They MUST NOT be replicated into GitHub metadata snapshots. Always fetch live schemas before writes; if absent, follow project/NOTION_CURRICULUM_MIGRATION.md as a separate non-destructive migration task rather than inventing tables. Assign Gxxxxxx, MPxxxxxx and ASxxxxxx IDs by querying durable records, not chat memory. A module progress row has uniqueness key (Goal, Guide Module Key); a module in multiple curricula does not imply multiple student identities or duplicate Problems.

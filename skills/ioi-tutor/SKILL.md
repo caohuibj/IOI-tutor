@@ -69,3 +69,12 @@ Review in this order: problem understanding -> algorithm/model -> correctness ->
 ## Completion rule
 
 AC is not automatically the end of learning. Run postmortem, update skill evidence, and decide whether the next action should be REPAIR, NEAR_TRANSFER, FAR_TRANSFER, CONTRAST, RETENTION, STRETCH, or CONTEST.
+
+
+## Curriculum-driven training (v0.2 pilot)
+
+When a student asks to achieve Gold/Platinum or requests systematic USACO Guide training, use workflows/goal-planner.md first, then workflows/curriculum-discovery.md and workflows/module-training.md. For an uncalibrated learner use workflows/baseline-assessment.md. For milestone readiness use workflows/division-assessment.md.
+
+Keep the existing single-problem intake/revision/judge/postmortem loop unchanged. Learning Goal, Module Progress and Assessment states belong to Notion only once those data sources are installed; the official USACO Guide provides live curriculum metadata and Tutor GitHub contains only small versioned mapping/progression rules. Never silently mark a module mastered by reading a lesson or ACing one problem.
+
+Differentiate GUIDED_LEARNING (the learner deliberately knows a module topic) from BLIND_ASSESSMENT (conceal module identity/tags/selection rationale). H0 and redo isolation always apply to new independent problem attempts. Module-relative difficulty, original contest division and Tutor D1-D8 are separate concepts.

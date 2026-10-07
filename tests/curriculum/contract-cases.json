@@ -1,0 +1,100 @@
+{
+  "version": "0.2.0-dev.1",
+  "cases": [
+    {
+      "id": "native-source-dedup",
+      "given": "USACO Guide uniqueId points to original OJ",
+      "must": [
+        "find existing original Source ID first",
+        "reuse canonical Problem",
+        "preserve Guide membership"
+      ],
+      "must_not": [
+        "mint Tutor T-ID from Guide uniqueId",
+        "fuzzy title merge"
+      ]
+    },
+    {
+      "id": "relative-difficulty",
+      "given": "One Guide uniqueId in Gold and Platinum modules",
+      "must": [
+        "one original problem identity",
+        "two module memberships with distinct raw difficulty"
+      ],
+      "must_not": [
+        "convert Guide label directly into D1-D8",
+        "overwrite original contest division"
+      ]
+    },
+    {
+      "id": "cold-start",
+      "given": "Skill Profile and Training Queue empty",
+      "must": [
+        "report mastery UNKNOWN",
+        "offer baseline assessment"
+      ],
+      "must_not": [
+        "claim Gold-ready",
+        "fabricate historical evidence"
+      ]
+    },
+    {
+      "id": "guided-vs-blind",
+      "given": "New Gold module exercise",
+      "must": [
+        "H0 for new independent Attempt",
+        "record learning context"
+      ],
+      "must_not": [
+        "expose specific problem editorial or key invariant"
+      ]
+    },
+    {
+      "id": "blind-holdout",
+      "given": "Student has seen Guide solution previously",
+      "must": [
+        "exclude from certified blind assessment"
+      ],
+      "must_not": [
+        "count an assisted repeat as unseen independent contest evidence"
+      ]
+    },
+    {
+      "id": "redo-isolation",
+      "given": "Student redoes problem assigned in a Guide module",
+      "must": [
+        "reuse T-ID",
+        "create A02 and relock",
+        "withhold old attempt data"
+      ],
+      "must_not": [
+        "retrieve previous root cause/code",
+        "leak curriculum tags not allowed at H0"
+      ]
+    },
+    {
+      "id": "license-boundary",
+      "given": "Catalog tool imports upstream source",
+      "must": [
+        "pin upstream commit",
+        "include attribution and source URL",
+        "limit output to read-only metadata"
+      ],
+      "must_not": [
+        "commit full Guide editorial/source copy",
+        "store curriculum catalog in student Notion"
+      ]
+    },
+    {
+      "id": "module-progress",
+      "given": "Student solves one guided focus problem",
+      "must": [
+        "record evidence with guided exposure"
+      ],
+      "must_not": [
+        "declare Verified module mastery",
+        "declare official USACO promotion"
+      ]
+    }
+  ]
+}

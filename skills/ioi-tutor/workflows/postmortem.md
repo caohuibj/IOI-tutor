@@ -50,3 +50,8 @@ Link each Training Queue item to the origin Attempt, target Skill, and target Pr
 ## Finalize Attempt
 
 Set final verdict/score, finish time/duration, status `RESOLVED` (or `ABANDONED` when appropriate), and preserve the full revision history. Never overwrite A01 when creating a later redo A02.
+
+
+## Curriculum evidence update (v0.2 pilot)
+
+When an Attempt originated from a Goal/Module, update its progress and relevant Skill evidence only after a supported postmortem. Record prior topic/solution exposure, independent status, Hint Max, real judge result, migration provenance, novelty, transfer and retention separately. COMPLETED coursework does not imply VERIFIED mastery. A guided focus problem is not a blind transfer success. If the curriculum Notion schema does not exist, report that the goal/progress update is pending; never claim durable persistence.

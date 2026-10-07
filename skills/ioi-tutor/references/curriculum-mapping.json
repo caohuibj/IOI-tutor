@@ -1,0 +1,46 @@
+{
+  "version": "0.2.0-dev.1",
+  "description": "Initial Tutor-proposed module-to-skill candidates pending real attempt validation; mapping is not official Guide taxonomy and is not student mastery evidence.",
+  "mapping_authority": "caohuibj/IOI-tutor",
+  "upstream_provider": "USACO_GUIDE",
+  "modules": {
+    "USACO_GUIDE:gold:intro-dp": {
+      "candidate_skill_ids": [
+        "dp.recognition",
+        "dp.state-design",
+        "dp.transition",
+        "dp.order"
+      ],
+      "topic_taxonomy_ids": [
+        "domain.dp"
+      ],
+      "mapping_status": "PILOT_PROPOSED"
+    },
+    "USACO_GUIDE:gold:dsu": {
+      "candidate_skill_ids": [
+        "graph.state-model",
+        "knowledge.repertoire"
+      ],
+      "topic_taxonomy_ids": [
+        "topic.ds.dsu"
+      ],
+      "mapping_status": "PILOT_PROPOSED"
+    },
+    "USACO_GUIDE:plat:binary-jump": {
+      "candidate_skill_ids": [
+        "knowledge.repertoire",
+        "complexity.analysis"
+      ],
+      "topic_taxonomy_ids": [
+        "topic.graph.tree"
+      ],
+      "mapping_status": "PILOT_PROPOSED"
+    }
+  },
+  "rules": [
+    "Module-topic knowledge is not evidence of problem-skill mastery.",
+    "Before H4, Tutor-derived technique/pattern labels remain internal unless the user explicitly elected topic-guided study and the lesson makes them public.",
+    "In BLIND_ASSESSMENT, do not expose module title, category, tags or solution metadata.",
+    "Do not infer D1-D8 from Guide relative difficulty."
+  ]
+}

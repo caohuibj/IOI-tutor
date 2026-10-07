@@ -1,34 +1,99 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0-dev.1",
   "platforms": {
     "LUOGU": {
       "source_id_format": "LUOGU-{external_id}",
-      "examples": ["LUOGU-P3372"],
-      "input_hints": ["P3372", "luogu P3372", "luogu.com.cn/problem/P3372"]
+      "examples": [
+        "LUOGU-P3372"
+      ],
+      "input_hints": [
+        "P3372",
+        "luogu P3372",
+        "luogu.com.cn/problem/P3372"
+      ]
     },
     "CODEFORCES": {
       "source_id_format": "CF-{contest_id}-{index}",
-      "examples": ["CF-1705-C"],
-      "input_hints": ["CF 1705C", "codeforces.com/contest/1705/problem/C"]
+      "examples": [
+        "CF-1705-C"
+      ],
+      "input_hints": [
+        "CF 1705C",
+        "codeforces.com/contest/1705/problem/C"
+      ]
     },
     "ATCODER": {
       "source_id_format": "AT-{contest}-{task}",
-      "examples": ["AT-ABC419-F"],
-      "input_hints": ["ABC419 F", "atcoder.jp/contests/abc419/tasks/abc419_f"]
+      "examples": [
+        "AT-ABC419-F"
+      ],
+      "input_hints": [
+        "ABC419 F",
+        "atcoder.jp/contests/abc419/tasks/abc419_f"
+      ]
     },
     "IOI": {
       "source_id_format": "IOI-{year}-{task_slug}",
-      "examples": ["IOI-2024-NILE"]
+      "examples": [
+        "IOI-2024-NILE"
+      ]
     },
     "USACO": {
       "source_id_format": "USACO-{year}-{season}-{division}-{task}",
-      "examples": ["USACO-2025-JAN-GOLD-1"]
+      "examples": [
+        "USACO-2025-JAN-GOLD-1"
+      ],
+      "alias_source_id_format": "USACO-CPID-{cpid}",
+      "identity_note": "Prefer cpid stable identity where available. Check preexisting year/month/division Source records before allocating a canonical Problem."
+    },
+    "CSES": {
+      "source_id_format": "CSES-{task_id}",
+      "examples": [
+        "CSES-1687"
+      ],
+      "input_hints": [
+        "cses.fi/problemset/task/1687"
+      ]
+    },
+    "POI": {
+      "source_id_format": "POI-{contest_year}-{task_key}",
+      "examples": [
+        "POI-2010-FROG"
+      ],
+      "input_hints": [
+        "szkopul.edu.pl/problemset/problem/..."
+      ]
+    },
+    "OJUZ": {
+      "source_id_format": "OJUZ-{task_key}",
+      "examples": [
+        "OJUZ-BOI19_VALLEY"
+      ],
+      "input_hints": [
+        "oj.uz/problem/view/BOI19_valley"
+      ]
+    },
+    "DMOJ": {
+      "source_id_format": "DMOJ-{task_id}",
+      "examples": [
+        "DMOJ-IOI04P4"
+      ],
+      "input_hints": [
+        "dmoj.ca/problem/ioi04p4"
+      ]
     }
   },
   "identity_rules": [
     "Platform Source ID is not the canonical Tutor Problem ID.",
     "One canonical Txxxxxx problem may have multiple Sources.",
     "Deduplicate only on explicit stable source identity or strong statement identity; never merge by fuzzy title alone.",
-    "Preserve native platform difficulty/rating as source metadata."
-  ]
+    "Preserve native platform difficulty/rating as source metadata.",
+    "If a platform lacks a matching Notion Platform option, use OTHER with a judge-qualified Source ID and its original URL; do not lose origin identity."
+  ],
+  "curriculum_provider": {
+    "name": "USACO_GUIDE",
+    "guide_problem_id_role": "CURRICULUM_REFERENCE_ONLY",
+    "module_key_format": "USACO_GUIDE:{division}:{module_id}",
+    "identity_warning": "Never treat Guide uniqueId as OJ identity without original URL resolution"
+  }
 }

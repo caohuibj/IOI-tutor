@@ -1,0 +1,36 @@
+name: Curriculum metadata adapter tests
+
+on:
+  pull_request:
+    paths:
+      - "tools/usaco_guide_catalog.py"
+      - "tests/curriculum/**"
+      - ".github/workflows/curriculum-tests.yml"
+  push:
+    paths:
+      - "tools/usaco_guide_catalog.py"
+      - "tests/curriculum/**"
+      - ".github/workflows/curriculum-tests.yml"
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Offline unit tests
+        run: python -m unittest discover -s tests/curriculum -p 'test_*.py' -v
+      - name: Syntax check
+        run: python -m py_compile tools/usaco_guide_catalog.py
+      - name: Live upstream smoke test (3 pilot modules; no content persisted)
+        run: |
+          python tools/usaco_guide_catalog.py --module gold:intro-dp --module gold:dsu --module plat:binary-jump --output /tmp/usaco-guide-pilot.json
+          python -c "import json; x=json.load(open('/tmp/usaco-guide-pilot.json')); assert x['statistics']['modules']==3; assert x['statistics']['module_problem_memberships']>0; print(x['source']['commit_sha'], x['statistics'])"
+      - name: Full Gold and Platinum metadata smoke test (read-only)
+        run: |
+          python tools/usaco_guide_catalog.py --division gold --division plat --output /tmp/usaco-guide-full.json
+          python -c "import json; x=json.load(open('/tmp/usaco-guide-full.json')); assert x['statistics']['modules']>=51; assert x['statistics']['module_problem_memberships']>=650; print(x['source']['commit_sha'], x['statistics'])"

@@ -8,7 +8,7 @@ Make the v0.1 architecture usable for daily training before adding advanced mast
 
 - Notion: Problems, Sources, Attempts, Revisions metadata, Error Events, Skill Profile, Training Queue.
 - `caohuibj/IOI-tutor`: taxonomy, skill graph, schemas, workflows, tests and evals.
-- `caohuibj/OI-training`: student code revisions. This repository must exist and be connected before code archival is enabled.
+- `caohuibj/OI-training`: student code revisions. This repository exists and is private; code-archive runtime still requires its own write and round-trip verification.
 
 ## Daily Notion views
 
@@ -21,8 +21,8 @@ The connector view DSL does not currently create a durable relative-date filter 
 
 ## E2E readiness checklist
 
-1. `OI-training` exists and is private.
-2. Initialize `README.md`, `problems/.gitkeep`, `templates/cpp20.cpp`, `templates/stress-test.cpp`.
+1. `OI-Training` exists and is private (verified on 2026-10-08).
+2. Verify the connected private OI-Training repo and its code-archive paths; repository existence was confirmed on 2026-10-08.
 3. Pick a real source problem.
 4. Run `source -> canonical Problem -> A01 -> H0`.
 5. Receive student code and archive exact `R01` with commit SHA.
@@ -35,3 +35,7 @@ The connector view DSL does not currently create a durable relative-date filter 
 ## Phase 2 exclusions
 
 Do not yet implement complex Elo/IRT/Bayesian mastery, bulk platform crawlers, automatic submission to online judges, or large-scale similarity embeddings. Validate the data lifecycle first with real training attempts.
+
+## v0.2 curriculum pilot
+
+Metadata provider, unit tests, USACO Guide license boundary and Gold/Platinum lesson mapping: see references/USACO_GUIDE_PROVIDER.md and project/NOTION_CURRICULUM_MIGRATION.md. Goal/Progress/Assessments tables are separate non-destructive migration; they are not implied installed by this file.

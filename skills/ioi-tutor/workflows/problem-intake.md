@@ -28,3 +28,10 @@ Do not reveal technique/pattern/key insight tags whose spoiler level exceeds H0.
 ## Redo
 
 For `重做 Txxxxxx`, reuse the Problem but create a new Attempt. Do not read old code, Error Events, key insights, or hint history before the new submission.
+
+
+## Curriculum candidate resolution (v0.2 pilot)
+
+A USACO Guide uniqueId is a curriculum reference, not an original OJ Source ID. Resolve the upstream problem URL to the judge's stable native ID; find existing Notion Sources and reuse its canonical Problem before allocating Txxxxxx. Preserve Guide module-relative difficulty and starred state per membership, rather than overwriting original contest rating or Tutor D1-D8. Multiple module memberships must not cause duplicate Problems.
+
+For BLIND_ASSESSMENT, show the original OJ statement and neutral logistics only; suppress Guide module title/category, protected tags, editorial kind and selection rationale. GUIDED_LEARNING may reveal the topic the learner intentionally chose but no locked problem-specific solution. Record prior-exposure mode separately from H0.

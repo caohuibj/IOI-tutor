@@ -24,3 +24,12 @@ A persistent, no-spoiler OI/IOI coaching system for ChatGPT.
 ## Version
 
 MVP: 0.1.0
+
+
+## Curriculum-driven training (development v0.2)
+
+Development branch adds a read-only, upstream-SHA-pinned curriculum provider for USACO Guide Gold/Platinum and offline/live pilot tests. Modules, original-judge problems and per-module difficulty are separated. See skills/ioi-tutor/references/USACO_GUIDE_PROVIDER.md and project/NOTION_CURRICULUM_MIGRATION.md.
+
+Current status: read-only pilot adapter and rules; Notion curriculum tables have been created separately, but no Gold/Platinum Goal or end-to-end adaptive readiness has been validated. Existing v0.1 H0, redo and judge evidence workflows remain in force.
+
+Notion schema v0.2 pilot: the three curriculum tables and additive Attempt/Training Queue properties were created on 2026-10-08. Their data and workspace identifiers remain private; the adaptive evidence loop is **not yet E2E verified**.

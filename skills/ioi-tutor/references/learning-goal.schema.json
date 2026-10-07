@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ioi-tutor/learning-goal.schema.json",
+  "title": "Student Learning Goal",
+  "type": "object",
+  "required": [
+    "goal_id",
+    "curriculum",
+    "target_division",
+    "status",
+    "stage",
+    "baseline_status"
+  ],
+  "properties": {
+    "goal_id": {
+      "type": "string",
+      "pattern": "^G[0-9]{6}$"
+    },
+    "curriculum": {
+      "const": "USACO_GUIDE"
+    },
+    "target_division": {
+      "enum": [
+        "GOLD",
+        "PLATINUM"
+      ]
+    },
+    "status": {
+      "enum": [
+        "PLANNED",
+        "ACTIVE",
+        "PAUSED",
+        "COMPLETED"
+      ]
+    },
+    "stage": {
+      "enum": [
+        "BASELINE",
+        "PREREQUISITES",
+        "MODULE_PRACTICE",
+        "CONTEST_READINESS",
+        "ASSESSMENT",
+        "COMPLETE"
+      ]
+    },
+    "baseline_status": {
+      "enum": [
+        "PENDING",
+        "COLLECTING",
+        "ASSESSED"
+      ]
+    },
+    "curriculum_commit": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "started": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "target_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": true
+}
