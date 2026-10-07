@@ -55,3 +55,7 @@ Set final verdict/score, finish time/duration, status `RESOLVED` (or `ABANDONED`
 ## Curriculum evidence update (v0.2 pilot)
 
 When an Attempt originated from a Goal/Module, update its progress and relevant Skill evidence only after a supported postmortem. Record prior topic/solution exposure, independent status, Hint Max, real judge result, migration provenance, novelty, transfer and retention separately. COMPLETED coursework does not imply VERIFIED mastery. A guided focus problem is not a blind transfer success. If the curriculum Notion schema does not exist, report that the goal/progress update is pending; never claim durable persistence.
+
+## Progress summary check
+
+If this Attempt has an exact Guide checklist match, confirm the checklist's Status/Completed/Evidence agree with the authoritative current judge record before closing. If a write fails, report pending synchronization; never claim an unchecked item was checked. Checklist SOLVED is NOT proof of module VERIFIED or Gold/Platinum graduation.

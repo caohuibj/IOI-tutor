@@ -38,3 +38,9 @@ Tags, editorial kinds, hints and module relationship can be solution-bearing. Th
 P1 source discovery and read-only metadata snapshot are supported. A database migration and student Goal creation are separate steps; do not claim end-to-end auto-planning until the Goals/Progress/Assessments tables and evidence loop are working and evaluated. Follow workflows/curriculum-discovery.md.
 
 Conclusion category modules are retained as distinct CONCLUSION metadata, not automatically treated as core lesson-mastery requirements. The lesson/module count displayed on the live website can differ from the raw upstream ordering snapshot; do not hard-code the UI count as a parser invariant.
+
+## Private student checklist index
+
+The student explicitly requested a private full per-problem checklist even before registering on Guide. An attributed minimal ID/title/original OJ link/module-relative difficulty index is therefore maintained in their private Notion IOI Tutor workspace. It contains no lesson/editorial bodies. Its 707 distinct IDs at pinned upstream SHA 81339eea4b5e43a0a1e26365f8dc8dfaa60f7705 represent 744 module-problem references (including focus/examples/conclusion); these **must not be equated** with the website's Gold 410 + Platinum 268 progress-counter totals. A source refresh must be idempotent on Guide uniqueId and must preserve all student progress state.
+
+Follow workflows/catalog-checklist.md for cross-chat updating. Do not expose private Notion workspace URL or student progress counts in public repository content.

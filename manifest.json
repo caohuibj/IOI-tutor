@@ -1,6 +1,6 @@
 {
   "name": "ioi-tutor",
-  "version": "0.2.0-dev.1",
+  "version": "0.2.0-dev.2",
   "description": "Persistent no-spoiler OI/IOI coaching with code diagnosis and adaptive training.",
   "student_state_source": "notion",
   "tutor_knowledge_source": "github:caohuibj/IOI-tutor",
@@ -11,5 +11,13 @@
   "curriculum_provider": "USACO_GUIDE",
   "curriculum_upstream": "cpinitiative/usaco-guide",
   "curriculum_scope": "Read-only Gold/Platinum metadata adapter with upstream smoke tests; private Notion schema provisioned separately; end-to-end learning loop requires validation.",
-  "notion_curriculum_schema": "0.2.0-dev.1"
+  "notion_curriculum_schema": "0.2.0-dev.1",
+  "curriculum_checklist": {
+    "name": "USACO Guide 题目清单",
+    "storage": "Notion private child database",
+    "source": "cpinitiative/usaco-guide",
+    "upstream_sha": "81339eea4b5e43a0a1e26365f8dc8dfaa60f7705",
+    "data": "attributed IDs, titles, OJ links, memberships, student progress; no editorials",
+    "status": "seeded; per-chat lifecycle routing specified, awaiting real end-to-end acceptance"
+  }
 }

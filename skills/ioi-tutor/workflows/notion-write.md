@@ -51,3 +51,9 @@ Finalize Attempt, update Skill Profile conservatively, and create Training Queue
 ## Curriculum-state extension (v0.2 pilot)
 
 Once verified present, Learning Goals, Module Progress and Assessments are additional Notion-owned student-state databases. They MUST NOT be replicated into GitHub metadata snapshots. Always fetch live schemas before writes; if absent, follow project/NOTION_CURRICULUM_MIGRATION.md as a separate non-destructive migration task rather than inventing tables. Assign Gxxxxxx, MPxxxxxx and ASxxxxxx IDs by querying durable records, not chat memory. A module progress row has uniqueness key (Goal, Guide Module Key); a module in multiple curricula does not imply multiple student identities or duplicate Problems.
+
+## Guide checklist database (private, personal-study source index)
+
+The IOI Tutor root has a child database titled "USACO Guide 题目清单". Resolve this database by title from the authenticated private workspace, not public/hard-coded IDs. It stores 1 row per upstream uniqueId and a summary of student's Status, Completed and Completion Evidence. It is a *private personal-use index*, not an authoritative copy of Guide's content; Guide original OJ/source metadata remains upstream authoritative.
+
+Never allocate a canonical T-ID simply because an item appears in this catalog. On every relevant Attempt/Revision/Judge action update the matching row according to workflows/catalog-checklist.md. Preserve underlying immutable revision evidence; do not write Guide lesson/editorial content. Idempotent lookup by exact Guide ID and normalized original OJ identity is required before any checkmark mutation. Do not convert UNTRACKED to "has never solved".

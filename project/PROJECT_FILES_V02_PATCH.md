@@ -18,7 +18,7 @@ Notion owns Learning Goals, Module Progress and Assessments; GitHub owns local c
 
 Official site https://usaco.guide/ ; upstream repository https://github.com/cpinitiative/usaco-guide ; license https://usaco.guide/license.
 
-Use only necessary read-only course metadata and original judge links for the student's individual training. Preserve an upstream commit SHA. Do not duplicate the full licensed problem catalog, Guide article/editorial contents or student state into public GitHub/Notion.
+Use only necessary read-only course metadata and original judge links for the student's individual training. Preserve an upstream commit SHA. Do not publicly republish licensed lesson/editorial contents or Guide datasets. A private, attributed minimal Guide-ID/link/module checklist exists in Notion for individual study; official Guide remains the source of catalog truth.
 
 ### Additional Notion student-state databases
 
@@ -54,3 +54,18 @@ After the GitHub PR is merged and live Project instructions/attachments are upda
 For self-study use USACO Guide's module lessons and original OJ links. The Tutor reads Guide metadata to choose exercises but does not reveal editorial details before H permission. Individual topic-guided exercise AC is learning evidence, not proof of blind contest mastery.
 
 Monitor module status (NOT_STARTED / LEARNING / PRACTICING / REVIEWING / COMPLETED) separately from mastery (UNKNOWN / DEVELOPING / PROFICIENT / VERIFIED). Redo continues to create a new locked Attempt. Ask 'Gold 综合考核' when seeking independent readiness confirmation.
+
+
+## Checklist additions for all four Project files (v0.2-dev.2)
+
+### PROJECT_CONTEXT.md
+One private Notion "USACO Guide 题目清单" index provides all linked Gold/Platinum items and one shared Completed status per Guide uniqueId. The original judge Source and Tutor T ID are separate objects. Checklisting is chat-triggered; it does not read judge or Guide accounts automatically.
+
+### DATA_SOURCES.md
+Private Notion database: USACO Guide 题目清单, child of IOI Tutor. Resolve by name at runtime. Its fields include Guide ID, Original OJ URL, Divisions, Module Keys, Relative Difficulties, Status, Completed, Completion Evidence, Tutor ID and Latest Attempt ID. UNTRACKED means no available evidence. Source: https://usaco.guide/; personal use only, CC BY-NC-SA 4.0, see https://usaco.guide/license.
+
+### COMMANDS.md
+On every incoming problem URL / platform ID: exact OJ/Guide identity → canonical T Problem → new H0 Attempt → checklist ATTEMPTING if matched. Student code → SUBMITTED_UNTESTED; WA/TLE/PARTIAL → still not newly completed; AC → SOLVED and Completed checkbox, with SELF_REPORTED or JUDGE_CONFIRMED provenance. Repeated Redo retains earlier Completion. Commands: "题目清单", "已完成题目", "正在做", "USACO Guide 进度".
+
+### USER_GUIDE.md
+The student does not need a USACO Guide account. The Guide checklist is privately seeded from public upstream course references, and individual ChatGPT chats update status only as submitted to Tutor. Open the database under Notion IOI Tutor to see views 全部题目/已完成题目/正在练习/需要复习. Start a fresh chat per problem as before; no new training Goal is necessary for a simple checklist update. To update without an Attempt, report an existing AC and original OJ reference, and mark the evidence SELF_REPORTED until independently checked.

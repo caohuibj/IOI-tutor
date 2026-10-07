@@ -8,7 +8,7 @@ This file is the implementation contract. An applied migration summary is record
 2. Module Progress: Progress ID (title, MPxxxxxx), Goal (relation), Module Key, Progress Status, Mastery Status, Prerequisites Met, Independent Evidence, Transfer Evidence, Retention Evidence, Curriculum Commit, Next Review, Notes. One row per Goal+Module Key.
 3. Assessments: Assessment ID (title, ASxxxxxx), Goal (relation), Assessment Type, Mode, Status, Result, Attempts (relation), Duration Min, Curriculum Commit, Rationale.
 
-A single Notion Goal and multiple individual module progress rows may share the same Guide program; do not store the full external Guide catalog in Notion. No user skill/score is inferred from blank tables.
+A single Notion Goal and multiple individual module progress rows may share the same Guide program; do not store a full public replica of the external Guide catalog in Notion. A student-requested private minimal Guide-ID/link checklist is an explicit personal-study exception, without lesson/editorial text. No user skill/score is inferred from blank tables.
 
 ## Later small extensions to existing databases
 
@@ -36,3 +36,12 @@ Existing Attempts now additionally has Exposure Mode, Prior Exposure, Learning G
 Post-migration verification confirmed existing student records were preserved and no sample student-state rows were fabricated. Exact counts belong to Notion, not this repository.
 
 Remaining P2 acceptance: real Gold Goal creation, at least one evidence-bearing Attempt round-trip through postmortem → Skill Profile → Module Progress → Training Queue, and a BLIND_ASSESSMENT check. Until then, never claim an end-to-end automated curriculum coach.
+
+
+## Private Guide Checklist — 2026-10-08
+
+An additional private child database titled "USACO Guide 题目清单" was created for the student's explicit request. All Gold and Platinum source \`*.problems.json\` files at upstream commit 81339eea4b5e43a0a1e26365f8dc8dfaa60f7705 were indexed for individual self-study. One row per distinct Guide uniqueId; module/difficulty memberships are merged. State defaults to UNTRACKED, Completed unchecked, Completion Evidence NONE; no fabricated AC.
+
+This database contains minimal original OJ links, Guide IDs and membership metadata **only**, not lesson texts/editorials, and is not a public/rehosted catalog. Notion is authoritative for checkmark state; upstream Guide is authoritative for source catalog facts. Resolve actual workspace URL via private Notion tools, not GitHub documentation. The pre-existing seven databases and the three v0.2 state databases are not bulk-populated by this import.
+
+Still pending before claiming fully automatic cross-chat operation: tested routing of real new Attempt → checklist match → code submission → real judge verdict → final checklist and existing Skill Profile; merge/review the PR and update ChatGPT Project instructions/attachments.

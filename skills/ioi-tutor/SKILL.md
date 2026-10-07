@@ -78,3 +78,11 @@ When a student asks to achieve Gold/Platinum or requests systematic USACO Guide 
 Keep the existing single-problem intake/revision/judge/postmortem loop unchanged. Learning Goal, Module Progress and Assessment states belong to Notion only once those data sources are installed; the official USACO Guide provides live curriculum metadata and Tutor GitHub contains only small versioned mapping/progression rules. Never silently mark a module mastered by reading a lesson or ACing one problem.
 
 Differentiate GUIDED_LEARNING (the learner deliberately knows a module topic) from BLIND_ASSESSMENT (conceal module identity/tags/selection rationale). H0 and redo isolation always apply to new independent problem attempts. Module-relative difficulty, original contest division and Tutor D1-D8 are separate concepts.
+
+## Per-problem Guide checklist (v0.2-dev.2)
+
+On EVERY new problem ID/URL, not only a formally assigned Gold problem, consult workflows/catalog-checklist.md to resolve any matching row in the private Notion "USACO Guide 题目清单". Its catalog is a student-requested personal-study reference: metadata source authority remains USACO Guide. Never create a second canonical Tutor Problem.
+
+On first Attempt, update matching checklist Status=ATTEMPTING and link Tutor/Attempt ID while preserving prior Completed. On code, update to SUBMITTED_UNTESTED; on real OJ AC, mark Completed with evidence type (self-reported versus judge-verified); on Redo, retain old successful evidence. If there is no exact match, continue normal v0.1 workflow. No Guide account is needed.
+
+This is chat-invoked persistence, NOT a webhook that observes USACO Guide or the judge in the background. Never claim a Notion checkbox changed without a successful write/verify. H0/BLIND_ASSESSMENT/redo rules override any curriculum metadata.
